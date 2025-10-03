@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // bandziau mongodb naudoti bet per daug problemu 
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// vartotojo modelis su id, name, email, password, role (admin ar user), createdAt
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("USER")
+  // santykis su eventais ir ratingais
+  events    Event[]  @relation("EventAuthor")
+  createdAt DateTime @default(now())
+  Rating    Rating[]
+}
+
+// kategorijos modelis su id, name
+model Category {
+  id     String  @id @default(uuid())
+  name   String  @unique
+  // santykis su eventais
+  events Event[]
+}
+
+// event modelis su id, title, description, startTime, endTime, location, image, approved (boolean), createdAt
+model Event {
+  id          String    @id @default(uuid())
+  title       String
+  description String
+  startTime   DateTime
+  endTime     DateTime?
+  location    String
+  image       String?
+  approved    Boolean   @default(false)
+  rejected    Boolean   @default(false) // <-- add this line
+  createdAt   DateTime  @default(now())
+
+  // santykiai su kategorijom ir vartotojais
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  // santykis su vartotoju (author)
+  author   User   @relation("EventAuthor", fields: [authorId], references: [id])
+  authorId String
+
+  ratings Rating[]
+}
+
+// rating modelis su id, score (1-5), comment, eventId, userId, createdAt
+model Rating {
+  id        String   @id @default(uuid())
+  score     Int
+  comment   String?
+  // santykis su eventu ir vartotoju
+  event     Event    @relation(fields: [eventId], references: [id])
+  eventId   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime @default(now())
+}

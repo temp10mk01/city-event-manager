@@ -1,0 +1,610 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-header {
+  margin-bottom: 2rem;
+  padding: 19px;
+}
+.home-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.home-header p {
+  font-size: 1.3rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* navigacijos stiliai */
+.navbar {
+  background: linear-gradient(135deg, #66ea9d 0%, #4b86a2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  inset: 0;
+  transition: font-size 0.3s;
+}
+.logo:hover {
+  font-size: 1.9rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-info {
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 2.5px;
+}
+
+.logout-btn {
+  font-size: 1.2rem;
+  font-weight: 100;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* mygtuku stiliai */
+.btn-primary {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-small {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  font-size: 15px;
+  color: white;
+  border: none;
+  width: 100px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin: 0px 12px;
+  transition: box-shadow 0.3s;
+}
+.btn-small:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+.btn-edit {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  font-size: 16px;
+  color: white;
+  border: none;
+  width: 120px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  transition: background-color 0.3s;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  font-size: 16px;
+  color: white;
+  border: none;
+  width: 120px;
+  letter-spacing: 1.2px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+/* eventform stiliai */
+
+.event-form-container {
+  max-width: 680px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+.event-form h3 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #2d3748;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* login formu stiliai */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.auth-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.auth-form input,
+.auth-form textarea,
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.auth-form input:focus,
+.auth-form textarea:focus,
+.auth-form select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* renginio korteles */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.event-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+.event-category {
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.event-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.event-details {
+  margin-bottom: 1rem;
+}
+
+.event-details div {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.event-actions {
+  position: relative;
+  bottom: 5px;
+}
+
+/* ivertinimo sistema */
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-text {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* admin pultas */
+
+.dashboard-container {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.stat {
+  background-color: #ccc;
+  margin: 10px;
+  text-align: center;
+}
+
+.stat > h3 {
+  background-color: #aaa;
+  padding: 5px;
+  font-size: 2rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 100;
+  padding: 10px;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.tab-btn {
+  background: #e1e1e1;
+  border: none;
+  width: 250px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  transition: background-color 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  color: white;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  font-size: 2.5rem;
+  color: #666;
+}
+
+.pending-event-card {
+  background: #ccc;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-info > h3::before {
+  content: "Pavadinimas: ";
+  font-weight: 600;
+}
+.event-info > h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.event-description::before {
+  content: "Aprasymas: ";
+  font-weight: 600;
+}
+.event-description {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.event-meta {
+  font-size: 1.2rem;
+}
+
+.event-meta span {
+  margin-right: 1.5rem;
+}
+
+.event-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-approve {
+  background: linear-gradient(135deg, #66ea9d 0%, #5aa1c2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-reject {
+  background: linear-gradient(135deg, #d02b3c 0%, #c55f69 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  transition: background-color 0.3s;
+}
+
+.categories-section {
+  margin-top: 3rem;
+}
+
+.form-input {
+  width: 300px;
+  padding: 10px;
+  margin-right: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+}
+
+.categories-list > h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  text-align: center;
+}
+.category-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.category-card .event-count {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  background: #5aa1c2;
+  color: white;
+}
+
+td {
+  padding: 0px 12px;
+}
+
+/* klaidos pranesimas */
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #f5c6cb;
+}
+
+/* kraunama busena */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* nera duomenu pranesimas */
+.no-events {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+/* filtru stiliai */
+.filters {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-filter {
+  margin-left: 1rem;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* responsive dizainas */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .auth-form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
