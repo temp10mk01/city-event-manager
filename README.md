@@ -37,6 +37,8 @@ git clone <repository-url>
 cd "Citify App"
 ```
 
+
+
 ### 2. priklausomybiu idiegimas
 
 **serveriui:**
